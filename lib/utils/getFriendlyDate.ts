@@ -3,4 +3,5 @@ export default () =>
     day: "numeric",
     month: "short",
     year: "numeric",
+    timeZone: "Australia/Sydney",
   });
