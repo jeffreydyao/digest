@@ -1,3 +1,4 @@
+import DeploymentFooter from "@/components/sections/DeploymentFooter";
 import HackerNews from "@/components/sections/HackerNews";
 import NewSouthWales from "@/components/sections/NewSouthWales";
 import SmhFrontPage from "@/components/sections/SmhFrontPage";
@@ -15,12 +16,15 @@ export default function Home() {
   return (
     <div>
       <main className="p-4 sm:p-8 space-y-4 sm:space-y-8 dark:bg-black dark:text-gray-200">
-        <p className="font-bold">Digest | {getFriendlyDate()}</p>
+        <header>
+          <p className="font-bold">Digest | {getFriendlyDate()}</p>
+        </header>
         <Summary />
         <NewSouthWales />
         <SmhFrontPage />
         <World />
         <HackerNews />
+        <DeploymentFooter />
       </main>
     </div>
   );
