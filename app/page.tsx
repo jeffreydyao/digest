@@ -4,7 +4,6 @@ import SmhFrontPage from "@/components/sections/SmhFrontPage";
 import Summary from "@/components/sections/Summary";
 import World from "@/components/sections/World";
 import getFriendlyDate from "@/lib/utils/getFriendlyDate";
-import { Metadata } from "next";
 
 // Invalidate SSR cache every hour to keep digest up to date.
 // Avoids unnecessary requests / OpenAI chat completions
