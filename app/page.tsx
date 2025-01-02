@@ -7,6 +7,8 @@ import getFriendlyDate from "@/lib/utils/getFriendlyDate";
 
 // Invalidate SSR cache every hour to keep digest up to date.
 // Avoids unnecessary requests / OpenAI chat completions
+// Cron job also revalidates it at the top of each hour.
+// @see /api/refresh
 export const revalidate = 3600;
 
 export default function Home() {
