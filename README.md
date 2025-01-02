@@ -1,36 +1,37 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Digest
 
-## Getting Started
+_A statically generated summary of the latest news and weather in Sydney + Hacker News frontpage posts, refreshed every hour._
 
-First, run the development server:
+![Screenshot of Digest](/screenshot.png)
+
+## Why does this exist?
+
+As a software engineer who already spends enough time on devices, I'm actively seeking ways to reduce my screen time. I have a bad habit of scrolling through news and social media compulsively; I wanted to shift my information consumption patterns to only check what's going on in the morning and evening, since anything in between is pointless and if it's urgent enough, someone will tell me anyway. This is my shot at it.
+
+## What this has
+
+- AI generated summary of today's Sydney weather + NSW + national + world headlines + HN frontpage
+- HN-like view of the above things
+- No images, just text! Loads quick.
+- Statically generated every hour to keep information up to date
+
+## Stack
+
+Next.js + TypeScript for the website + an API route for cache invalidation. Website is hosted on Vercel. Cron job to bust the cache is hosted on val.town.
+
+## Getting things running
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Set the `OPENAI_API_KEY` environmental variable to make AI summaries work.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+This doesn't have to be hosted on Vercel, you can host it on AWS, a VPS (DigitalOcean droplet, etc), or any other hosting service that supports Next.js self hosted.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Roadmap
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [ ] Add personally relevant data (Garmin Connect, MFP, today's workout, etc)
+- [ ] Public API for retrieving information on website programatically
+- [ ] Turn this into a SaaS?
