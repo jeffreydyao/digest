@@ -65,8 +65,8 @@ The RSS feed above shows the frontpage posts on Hacker News. Using two or less s
         </span>
       </div>
       <ul className="list-disc list-inside indent-1 space-y-2">
-        {summaryItems.map((item) => (
-          <li>{item}</li>
+        {summaryItems.map((item, i) => (
+          <li key={i}>{item}</li>
         ))}
       </ul>
     </section>
