@@ -2,7 +2,7 @@ import getHnFrontPage from "@/lib/data/hn/getHnFrontPage";
 import getNswNews from "@/lib/data/smh/getNswNews";
 import getRelativeDateFromStr from "@/lib/utils/getRelativeDateFromStr";
 
-const MAX_ITEMS = 10;
+const MAX_ITEMS = 30;
 
 export default async function HackerNews() {
   const posts = (await getHnFrontPage()).slice(0, MAX_ITEMS);
